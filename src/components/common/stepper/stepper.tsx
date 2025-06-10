@@ -19,17 +19,18 @@ export function Stepper({ steps, currentStep }: StepperProps) {
         <React.Fragment key={index}>
           <div
             className={cn(
-              'flex items-center gap-2 rounded-lg px-1 py-1',
+              'flex items-center gap-2 rounded-xl px-1 py-1',
               index < currentStep && 'bg-primary/20 text-primary border-primary border',
-              index === currentStep && 'bg-primary text-primary-foreground p-1.5'
+              index === currentStep && 'bg-primary text-primary-foreground px-2.5 py-2.5'
             )}
           >
             <div
               className={cn(
-                'flex size-6 items-center justify-center rounded-full border-2',
+                'flex items-center justify-center rounded-full border-2',
                 index <= currentStep
                   ? 'border-primary bg-primary text-primary-foreground'
-                  : 'border-primary-foreground bg-primary-foreground text-primary'
+                  : 'border-primary-foreground bg-primary-foreground text-primary',
+                index >= currentStep ? 'size-fit' : 'size-6'
               )}
             >
               {index < currentStep ? (
