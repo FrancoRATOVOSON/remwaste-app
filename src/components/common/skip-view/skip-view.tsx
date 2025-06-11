@@ -44,7 +44,7 @@ export function SkipView({
           <div className="font-light">{hirePeriod}</div>
           <div
             className={cn(
-              'bg-primary flex w-fit items-center gap-1 rounded-md px-2 py-1',
+              'bg-primary dark:bg-primary/30 flex w-fit items-center gap-1 rounded-md px-2 py-1',
               allowed_on_road ? 'text-green-300' : 'text-yellow-300'
             )}
           >

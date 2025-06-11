@@ -55,7 +55,7 @@ export function Stepper({ steps, currentStep }: StepperProps) {
           </div>
 
           {index < steps.length - 1 && (
-            <div className="mx-2 h-0.5 max-w-20 min-w-2 flex-1 grow bg-black" />
+            <div className="bg-primary mx-2 h-0.5 max-w-20 min-w-2 flex-1 grow" />
           )}
         </React.Fragment>
       ))}

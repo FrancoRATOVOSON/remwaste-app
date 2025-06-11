@@ -32,7 +32,7 @@ export function SkipCard({
         {!allowed_on_road && (
           <Tooltip>
             <TooltipTrigger>
-              <div className="bg-primary flex size-5 items-center justify-center rounded-full">
+              <div className="bg-primary dark:bg-primary/30 flex size-5 items-center justify-center rounded-full">
                 <TriangleAlert className="mb-0.5 size-3 text-yellow-300" />
               </div>
             </TooltipTrigger>
