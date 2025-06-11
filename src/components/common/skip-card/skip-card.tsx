@@ -1,6 +1,6 @@
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import type { SkipType } from '@/lib/types'
-import { cn } from '@/lib/utils'
+import { cn, formatPrice } from '@/lib/utils'
 import { TriangleAlert } from 'lucide-react'
 
 interface SkipCardProps {
@@ -43,9 +43,7 @@ export function SkipCard({
         )}
       </div>
       <div className="bg-primary/15 border-primary flex items-center justify-center rounded-full border px-2 py-1 text-xs font-semibold">
-        {new Intl.NumberFormat('en-UK', { style: 'currency', currency: 'GBP' }).format(
-          price_before_vat
-        )}
+        {formatPrice(price_before_vat)}
       </div>
     </div>
   )
