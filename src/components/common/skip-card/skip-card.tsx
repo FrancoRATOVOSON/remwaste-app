@@ -24,7 +24,7 @@ export function SkipCard({
       className={cn(
         className,
         'flex cursor-pointer flex-col items-center gap-1',
-        'border-primary w-28 rounded-[1.25rem] border py-2'
+        'border-secondary w-28 rounded-[1.25rem] border py-2'
       )}
     >
       <div className="flex flex-row-reverse items-center gap-2">
@@ -32,17 +32,17 @@ export function SkipCard({
         {!allowed_on_road && (
           <Tooltip>
             <TooltipTrigger>
-              <div className="bg-primary dark:bg-primary/30 flex size-5 items-center justify-center rounded-full">
+              <div className="bg-primary dark:bg-primary/20 flex size-5 items-center justify-center rounded-full">
                 <TriangleAlert className="mb-0.5 size-3 text-yellow-300" />
               </div>
             </TooltipTrigger>
-            <TooltipContent className="bg-accent">
+            <TooltipContent className="bg-primary">
               <p>Not Allowed On The Road</p>
             </TooltipContent>
           </Tooltip>
         )}
       </div>
-      <div className="bg-accent/15 border-accent flex items-center justify-center rounded-full border px-2 py-1 text-xs font-semibold">
+      <div className="bg-primary/15 border-primary/50 text-primary flex items-center justify-center rounded-full border px-2 py-1 text-xs font-semibold">
         {formatPrice(price_before_vat)}
       </div>
     </div>

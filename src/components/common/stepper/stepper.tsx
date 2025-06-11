@@ -32,15 +32,16 @@ export function Stepper({ steps, currentStep }: StepperProps) {
             ref={index === currentStep ? currentStepRef : null}
             className={cn(
               'flex shrink-0 items-center gap-2 rounded-xl px-1 py-1',
-              index < currentStep && 'bg-accent/15 text-accent border-accent border',
-              index === currentStep && 'bg-accent text-primary-foreground px-2.5 py-2.5'
+              index < currentStep &&
+                'bg-primary/15 dark:bg-primary/5 text-primary border-primary border',
+              index === currentStep && 'bg-primary text-primary-foreground px-2.5 py-2.5'
             )}
           >
             <div
               className={cn(
                 'flex items-center justify-center rounded-full border-2',
                 index <= currentStep
-                  ? 'border-accent bg-accent text-primary-foreground'
+                  ? 'border-primary bg-primary text-primary-foreground'
                   : 'border-background text-primary-foreground',
                 index >= currentStep ? 'size-fit' : 'size-6'
               )}
@@ -55,7 +56,7 @@ export function Stepper({ steps, currentStep }: StepperProps) {
           </div>
 
           {index < steps.length - 1 && (
-            <div className="bg-accent mx-2 h-0.5 max-w-20 min-w-2 flex-1 grow" />
+            <div className="bg-primary mx-2 h-0.5 max-w-20 min-w-2 flex-1 grow" />
           )}
         </React.Fragment>
       ))}

@@ -44,7 +44,7 @@ export function SkipView({
           <div className="font-light">{hirePeriod}</div>
           <div
             className={cn(
-              'bg-primary dark:bg-primary/30 flex w-fit items-center gap-1 rounded-md px-2 py-1',
+              'bg-primary dark:bg-primary/20 mt-4 flex w-fit items-center gap-1 rounded-md px-2 py-1',
               allowed_on_road ? 'text-green-300' : 'text-yellow-300'
             )}
           >
@@ -52,7 +52,12 @@ export function SkipView({
             <span className="text-xs">{roadAllowance}</span>
           </div>
         </div>
-        <Button onClick={handleContinue} size="lg" className="cursor-pointer">
+        <Button
+          onClick={handleContinue}
+          variant="secondary"
+          size="lg"
+          className="hover:bg-primary cursor-pointer"
+        >
           Continue With This Choice
           <ChevronRight className="size-4" />
         </Button>
