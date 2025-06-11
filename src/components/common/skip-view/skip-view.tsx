@@ -1,3 +1,4 @@
+import { AspectRatio } from '@/components/ui/aspect-ratio'
 import { Button } from '@/components/ui/button'
 import type { SkipType } from '@/lib/types'
 import { cn, formatPrice, getImageUrl } from '@/lib/utils'
@@ -25,15 +26,16 @@ export function SkipView({
   }
 
   return (
-    <div className={cn('flex w-full', 'flex-col gap-4', 'md:flex-4 md:flex-row', className)}>
+    <div className={cn('flex w-full', 'h-fit flex-col gap-4', 'md:flex-4 md:flex-row', className)}>
       <div
         className={cn(
           'flex shrink grow-0 items-center justify-center overflow-clip rounded-md',
-          'w-full',
-          'md:w-1/2'
+          'h-fit max-h-full w-full md:w-1/2'
         )}
       >
-        <img src={imageUrl} alt={label} className="size-full" />
+        <AspectRatio ratio={1.43 / 1}>
+          <img src={imageUrl} alt={label} className="size-full" />
+        </AspectRatio>
       </div>
       <div className="flex grow flex-col gap-4 md:justify-between">
         <div className="flex flex-col">
