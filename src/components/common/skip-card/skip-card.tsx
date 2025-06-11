@@ -36,13 +36,13 @@ export function SkipCard({
                 <TriangleAlert className="mb-0.5 size-3 text-yellow-300" />
               </div>
             </TooltipTrigger>
-            <TooltipContent>
+            <TooltipContent className="bg-accent">
               <p>Not Allowed On The Road</p>
             </TooltipContent>
           </Tooltip>
         )}
       </div>
-      <div className="bg-primary/15 border-primary flex items-center justify-center rounded-full border px-2 py-1 text-xs font-semibold">
+      <div className="bg-accent/15 border-accent flex items-center justify-center rounded-full border px-2 py-1 text-xs font-semibold">
         {formatPrice(price_before_vat)}
       </div>
     </div>
