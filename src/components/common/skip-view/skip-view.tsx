@@ -26,11 +26,11 @@ export function SkipView({
   }
 
   return (
-    <div className={cn('flex w-full', 'h-fit flex-col gap-4', 'md:flex-4 md:flex-row', className)}>
+    <div className={cn('flex w-full', 'h-fit flex-col gap-4', 'md:flex-1 lg:flex-row', className)}>
       <div
         className={cn(
           'flex shrink grow-0 items-center justify-center overflow-clip rounded-md',
-          'h-fit max-h-full w-full md:w-1/2'
+          'h-fit max-h-full w-full lg:w-1/2'
         )}
       >
         <AspectRatio ratio={1.43 / 1}>
@@ -45,7 +45,7 @@ export function SkipView({
           <div
             className={cn(
               'bg-primary flex w-fit items-center gap-1 rounded-md px-2 py-1',
-              allowed_on_road ? 'text-green-700' : 'text-yellow-700'
+              allowed_on_road ? 'text-green-300' : 'text-yellow-300'
             )}
           >
             {allowed_on_road ? <Check className="size-4" /> : <TriangleAlert className="size-4" />}

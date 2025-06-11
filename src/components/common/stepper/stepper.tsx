@@ -25,7 +25,7 @@ export function Stepper({ steps, currentStep }: StepperProps) {
   }, [])
 
   return (
-    <div className="flex w-full items-center overflow-auto">
+    <div className="flex w-full items-center overflow-auto lg:justify-center">
       {steps.map((step, index) => (
         <React.Fragment key={index}>
           <div
@@ -54,7 +54,9 @@ export function Stepper({ steps, currentStep }: StepperProps) {
             <div className="text-center text-xs">{step.label}</div>
           </div>
 
-          {index < steps.length - 1 && <div className="mx-2 h-0.5 min-w-2 flex-1 bg-black" />}
+          {index < steps.length - 1 && (
+            <div className="mx-2 h-0.5 max-w-20 min-w-2 flex-1 grow bg-black" />
+          )}
         </React.Fragment>
       ))}
     </div>

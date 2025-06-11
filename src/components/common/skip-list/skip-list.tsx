@@ -26,11 +26,15 @@ export function SkipList({ list }: SkipListProps) {
     )
 
   return (
-    <div className={cn('flex gap-6', selected && 'flex-col md:flex-row')}>
+    <div className={cn('flex gap-6', selected && 'flex-col gap-4 md:flex-row md:gap-6 lg:w-full')}>
       <div
         className={cn(
-          'flex w-full gap-4 overflow-scroll md:w-fit md:flex-wrap',
-          selected && 'md:flex-col'
+          'mx-auto flex w-fit flex-wrap items-center overflow-scroll',
+          'justify-center gap-3',
+          'sm:max-w-11/12 sm:gap-4',
+          'md:gap-4',
+          selected && 'grow-O w-full shrink flex-nowrap justify-start py-2',
+          selected && 'md:w-fit md:flex-col md:flex-wrap'
         )}
       >
         {list.map(skip => (
@@ -42,7 +46,9 @@ export function SkipList({ list }: SkipListProps) {
           />
         ))}
       </div>
-      {selected && <SkipView skip={selected} className="grow-0 md:max-h-96" />}
+      {selected && (
+        <SkipView skip={selected} className="grow-0 md:max-h-96 lg:w-24 lg:shrink-0 lg:grow" />
+      )}
     </div>
   )
 }
