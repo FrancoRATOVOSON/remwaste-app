@@ -57,6 +57,7 @@ export function SkipView({
           variant="secondary"
           size="lg"
           className="hover:bg-primary cursor-pointer"
+          disabled={!allowed_on_road}
         >
           Continue With This Choice
           <ChevronRight className="size-4" />

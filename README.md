@@ -1,54 +1,31 @@
-# React + TypeScript + Vite
+# REMWaste App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is my updated version of the remwaste app at the skip size choice.
 
-Currently, two official plugins are available:
+## Functional Choices
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+I choosed a simple list of skip sizes to replace the original card list. The idea was to get rid of the shopping card approach that I judged not relevant for this feature.
+Actualy, I thought about a searchable select list (a combobox) for the job to choose a skip size but I think that having the price directly with the size is a usefull information for the user so the simple list was the best choice.
 
-## Expanding the ESLint configuration
+With that, the old skip size selection interaction was a bad UX flow. Making the card selectable could have suggested the users that they can select more than 1 skip size, whitch is not the case. So there was a need to provide the user another way to let them know that they can choose only 1 size and which one they choosed (the bottom bar was not so bad of an idea but is not asa clear as I what I want to give). So I decided that clicking a skip size card would only give infromations about the skip (like the image, the hire period,...) and the main action (the "continue" button) can only be done for the selected skip. This way the user see only the most important informations first (the skip size and the price), get some details when they make the pre-selection (the image, the hire period) and their final choice is absolutely certain to be the one they are currently seeing.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+The image was removed since it is not realy informative for the user (the image does not give any help for the user to imagine the result), but is still acessible when the user select the skip. Also, an alert was visible when the skip is not allowed on the road since this gives a real consequence for the user (the continue button is disabled because they cannot order a skip that is not allowed for their  street).
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Unfortunately, not enough effort was able to be put on color scheme selection.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Possible Improvement
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+* A button to show only allowed skip or show all*
+* In large screen (while the skip size list is vertical), make the page not scrollable but only the list
+* Add the search feature to help the user find more easily*
+* Add filter feature* (like for size or price)
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+*NB*: * => Features that could be done by the api
+
+## Technical Choice
+
+Since this repository is only a for showcasing, I choosed the make the code the simplest possible :
+
+* shadcn and tailwindcss for development speed
+* custom useQuery hook (no need for an extra dependency)
+* simple code structure
